@@ -1,0 +1,17 @@
+body{
+    background-color: cadetblue;
+}
+#test span {
+    display         : inline-block;
+    width           : 250px;
+    text-align      : center;
+    background-color: red;
+    color           : block;
+}
+
+#test p {
+    width           : 250px;
+    text-align      : center;
+    background-color: red;
+    color           : block;
+}
