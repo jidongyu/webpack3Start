@@ -9,7 +9,7 @@ const path = require('path');
 module.exports = {
     entry: './src/app.js',
     output: {
-        path: path.resolve(__dirname,'dist'),
+        path: path.resolve(__dirname, 'dist'),
         filename: 'app.js'
     },
     plugins: [
@@ -33,12 +33,27 @@ module.exports = {
             },
             {
                 test: /\.css$/,
-                use: ['style-loader','css-loader']
+                use: ['style-loader', 'css-loader']
+            },
+            // {
+            //     test: /\.(jpg|png|gif|jpeg)$/,
+            //     use: ['file-loader']
+            // },
+            {
+                test: /\.(jpg|png|gif)$/,
+                use: [
+                    {
+                        loader: 'url-loader',
+                        options: {
+                            limit: 200000,
+                        }
+                    }
+                ]
             }
         ]
-    },
+},
     devServer: {
-        open: true,
+    open: true,
         port: 9090
-    }
+}
 }
